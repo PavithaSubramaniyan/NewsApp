@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+        </KeyFrameSet>
+        <OnClick motion:clickAction="toggle"
+            motion:targetId="@id/iv_cloud_grey" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            motion:layout_constraintVertical_bias="0.427"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/iv_sun" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.369"
+            android:layout_height="200dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.421"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_width="200dp"
+            android:id="@+id/iv_cloud_white" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.445"
+            android:layout_height="150dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.789"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_width="150dp"
+            android:id="@+id/iv_cloud_grey" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/view_background_gray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/view_background_blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="1" />
+        <Constraint
+            android:id="@+id/iv_cloud_white"
+            android:elevation="1dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintLeft_toRightOf="parent" />
+        <Constraint
+            android:id="@+id/iv_cloud_grey"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintRight_toLeftOf="parent" />
+    </ConstraintSet>
+</MotionScene>
